@@ -5,7 +5,7 @@ import pytest
                          [(30, 10, 20),
                           (20, 2, 18),
                           (0,0,0),
-                          (10,0,10),
+                          (9,0,9),
                           (10,10,0)])
 def test_transactions(earned, spent, expected):
     my_wallet = Wallet()
