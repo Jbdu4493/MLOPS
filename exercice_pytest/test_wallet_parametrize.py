@@ -9,8 +9,8 @@ import pytest
                           (10,10,0)])
 def test_transactions(earned, spent, expected):
     my_wallet = Wallet()
-    my_wallet.add_cash(earned)
-    my_wallet.spend_cash(spent)
+    my_wallet.add(earned)
+    my_wallet.spend(spent)
     assert my_wallet.balance == expected
 
 @pytest.mark.parametrize("amount, spend",
@@ -19,5 +19,5 @@ def test_transactions(earned, spent, expected):
 def test_raise_exception(amount,spend):
         w = Wallet(amount)
         with pytest.raises(InsufficientAmount):
-                w.spend_cash(spend)
+                w.spend(spend)
                 
